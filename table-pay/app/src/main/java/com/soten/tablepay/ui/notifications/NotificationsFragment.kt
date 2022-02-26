@@ -1,10 +1,10 @@
 package com.soten.tablepay.ui.notifications
 
+import android.animation.Animator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.soten.tablepay.databinding.FragmentNotificationsBinding
@@ -23,16 +23,25 @@ class NotificationsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
-
+            ViewModelProvider(this)[NotificationsViewModel::class.java]
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.lottie.speed = 2f
+        binding.lottie.repeatCount = 0
+
+        val animatorListener = object : Animator.AnimatorListener {
+            override fun onAnimationStart(p0: Animator?) {}
+            override fun onAnimationEnd(p0: Animator?) {}
+            override fun onAnimationCancel(p0: Animator?) {}
+            override fun onAnimationRepeat(p0: Animator?) {}
         }
-        return root
+
+        binding.lottie.addAnimatorListener(animatorListener)
     }
 
     override fun onDestroyView() {
