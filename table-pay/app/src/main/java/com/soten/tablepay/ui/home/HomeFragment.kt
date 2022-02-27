@@ -51,8 +51,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         binding.textHome.setOnClickListener {
             retrofit.test2("hello").enqueue(object : Callback<Unit> {
                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
@@ -97,8 +95,6 @@ class HomeFragment : Fragment() {
             UserApiClient.instance.loginWithKakaoAccount(requireContext(), callback = callback)*/
 
         }
-        // http://3.38.62.132/auth/kakao/owner
-        // http://3.38.62.132/auth/kakao/customer
     }
 
 

@@ -16,4 +16,7 @@ interface TablePayService {
         @Header("Authorization") header: String
     ): Call<Unit>
 
+//    @GET("auth/login")
+//    fun login(): Call<>
+
 }
