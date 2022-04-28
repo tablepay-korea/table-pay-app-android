@@ -3,23 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigationOwnerHome">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.soten.tablepay.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigationLogin"
+        android:name="com.soten.tablepay.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.soten.tablepay.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigationOwnerHome"
+        android:name="com.soten.tablepay.ui.owner.home.OwnerHomeFragment"
+        tools:layout="@layout/fragment_owner_home" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.soten.tablepay.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_customer_home"
+        android:name="com.soten.tablepay.ui.customer.home.CustomerHomeFragment"
+        tools:layout="@layout/fragment_customer_home" />
+
+    <fragment
+        android:id="@+id/navigation_customer_settings"
+        android:name="com.soten.tablepay.ui.customer.settings.SettingsFragment"
+        tools:layout="@layout/fragment_customer_settings" />
 </navigation>
